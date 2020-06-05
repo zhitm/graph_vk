@@ -20,7 +20,6 @@ while True:
 			g.del_edge(fst, scnd)
 		if commands[0] == "friends":
 			print(Node.id_to_node(commands[1]).friends)
-		if commands[0] == print:
+		if commands[0] == "print":
 			for node in g.nodes:
 				print(node.id, " ", node.friends)
-
