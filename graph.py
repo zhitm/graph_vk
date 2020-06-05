@@ -47,7 +47,7 @@ class Graph:
 
 if __name__ == '__main__':
 	g = Graph()
-	file = open('friends_members.txt', 'r')
+	file = open('members.txt', 'r')
 	for line in file:
 		line = line.strip()
 		arr = line.split()
@@ -58,7 +58,6 @@ if __name__ == '__main__':
 		for friend_id in arr[1:]:
 			node = Node.id_to_node(id)
 			friend = Node.id_to_node(friend_id)
-			if friend == None:
-				g.add_node(friend_id)
 			friend = Node.id_to_node(friend_id)
 			g.add_edge(node, friend)
+	print("ok")
