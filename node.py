@@ -10,6 +10,9 @@ class Node:
 	def dict_upd(self):
 		Node.id_node_dict.update({self.id: self})
 
+	@staticmethod
 	def id_to_node(node_id):
-		node = Node.id_node_dict.get(node_id)
-		return node
+		if node_id in Node.id_node_dict:
+			return Node.id_node_dict[node_id]
+		else:
+			return Node(node_id)

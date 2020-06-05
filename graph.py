@@ -52,12 +52,10 @@ if __name__ == '__main__':
 		line = line.strip()
 		arr = line.split()
 		id = arr[0]
-		g.add_node(id)
+		g.add_node(Node.id_to_node(id))
 		print(id)
 		for friend_id in arr[1:]:
 			node = Node.id_to_node(id)
 			friend = Node.id_to_node(friend_id)
-			if friend == None:
-				g.add_node(friend_id)
-			friend = Node.id_to_node(friend_id)
-			g.add_edge(id, friend)
+			g.add_edge(node, friend)
+	print("ok")
