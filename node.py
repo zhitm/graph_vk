@@ -1,11 +1,13 @@
 class Node:
 	id_node_dict = {}
+	cnt = 0
 	def __init__(self, id):
 		self.id = id
 		self.friends = set()
 		self.used = False #переменная для обходов, сразу после обхода превращается обратно в False
-		self.number = None
+		self.number = Node.cnt
 		self.dict_upd()
+		Node.cnt += 1
 
 	def dict_upd(self):
 		Node.id_node_dict.update({self.id: self})

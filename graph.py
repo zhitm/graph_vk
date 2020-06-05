@@ -8,7 +8,6 @@ class Graph:
 		self.is_connected = True
 	def add_node(self, id):
 		node = Node(id)
-		node.number = self.node_cnt
 		self.nodes.append(node)
 		self.graph.update({node: node.friends})
 		self.node_cnt += 1
