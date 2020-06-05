@@ -52,7 +52,6 @@ if __name__ == '__main__':
 		arr = line.split()
 		id = arr[0]
 		g.add_node(id)
-		print(id)
 		node = Node.id_to_node(id)
 		for friend_id in arr[1:]:
 			node = Node.id_to_node(id)
