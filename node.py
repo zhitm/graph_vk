@@ -11,9 +11,9 @@ class Node:
 		Node.cnt += 1
 
 		# physics attributes
-		self.coords = numpy.array([0,0])
-		self.velocity = numpy.array([0,0])
-		self.accel = numpy.array([0, 0])
+		self.coords = numpy.array([0,0], dtype=numpy.float64)
+		self.velocity = numpy.array([0,0], dtype=numpy.float64)
+		self.accel = numpy.array([0, 0], dtype=numpy.float64)
 
 	def dict_upd(self):
 		Node.id_node_dict.update({self.id: self})
@@ -31,4 +31,4 @@ class Node:
 		print(node.coords)
 
 	def draw(self, view, pygame, screen):
-		pygame.draw.circle(screen, (0, 0, 255), view.transform(self.coords[0], self.coords[1]), 30)
+		pygame.draw.circle(screen, (0, 0, 255), view.transform(self.coords[0], self.coords[1]), 3)
