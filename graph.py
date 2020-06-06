@@ -69,6 +69,16 @@ class Graph:
 
 		return cnt
 
+	def loop_cnt(self, node):
+		cnt = 0
+		for pair in combinations(node.eaten_nodes, 2):
+			if pair[0] in pair[1].friends:
+				cnt += 1
+		for node1 in node.eaten_nodes:
+			if node1 in node.friends:
+				cnt += 1
+		return cnt
+
 	def nodes_merger(self, node1, node2): #объединение
 		node1.eaten_nodes += node2.eaten_nodes
 		node2.eaten_nodes.clear()
@@ -151,7 +161,8 @@ class Graph:
 		print('nodes at all: ' + str(self.node_cnt))
 
 	def set_groups(self):
-		self.groups = deepcopy(self.nodes)
+		for el in self.nodes:
+			self.groups.add(el)
 
 if __name__ == '__main__':
 	g = Graph()
