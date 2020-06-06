@@ -62,12 +62,10 @@ class Graph:
 
 	def weight_cnt(self, node1, node2): #масса ребра между группами
 		cnt = 0
-		for node in node2.eaten_nodes:
-			if node in node1.friends:
-				cnt += 1
-		if node2 in node1.friends:
-			cnt += 1
-
+		for node in node1.eaten_nodes:
+			for eaten_by_node2 in node2.eaten_nodes:
+				if node in eaten_by_node2.friends:
+					cnt += 1
 		return cnt
 
 	def loop_cnt(self, node):
@@ -80,11 +78,10 @@ class Graph:
 				cnt += 1
 		return cnt
 
-	def nodes_merger(self, node1, node2): #объединение
+	def merge_nodes(self, node1, node2): #объединение
 		node1.eaten_nodes += node2.eaten_nodes
 		node2.eaten_nodes.clear()
 		self.groups.discard(node2)
-
 
 	def go_in_depth(self, node):
 		node.used = True

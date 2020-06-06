@@ -4,6 +4,7 @@
     <list default="true" id="e341cdc4-a93e-488f-9df1-698d75d12d77" name="Default Changelist" comment="Merge branch 'physics' of https://github.com/zhitm/graph_vk into physics&#10;&#10;# Conflicts:&#10;#&#9;debug.py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graph.py" beforeDir="false" afterPath="$PROJECT_DIR$/graph.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node.py" beforeDir="false" afterPath="$PROJECT_DIR$/node.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,22 +161,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1591458145705" />
-    <state width="1899" height="289" key="GridCell.Tab.0.bottom" timestamp="1591475734663">
+    <state width="1899" height="289" key="GridCell.Tab.0.bottom" timestamp="1591477134188">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="289" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591475734663" />
-    <state width="1899" height="289" key="GridCell.Tab.0.center" timestamp="1591475734662">
+    <state width="1899" height="289" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591477134188" />
+    <state width="1899" height="289" key="GridCell.Tab.0.center" timestamp="1591477134188">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="289" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591475734662" />
-    <state width="1899" height="289" key="GridCell.Tab.0.left" timestamp="1591475734662">
+    <state width="1899" height="289" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591477134188" />
+    <state width="1899" height="289" key="GridCell.Tab.0.left" timestamp="1591477134188">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="289" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591475734662" />
-    <state width="1899" height="289" key="GridCell.Tab.0.right" timestamp="1591475734663">
+    <state width="1899" height="289" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591477134188" />
+    <state width="1899" height="289" key="GridCell.Tab.0.right" timestamp="1591477134188">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="289" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591475734663" />
+    <state width="1899" height="289" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591477134188" />
     <state x="184" y="86" key="MergeDialog" timestamp="1591464164846">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
