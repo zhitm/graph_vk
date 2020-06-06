@@ -11,6 +11,11 @@ class Node:
 
 	def dict_upd(self):
 		Node.id_node_dict.update({self.id: self})
+		
+	def set_node_coords(node, x, y):
+		node.coords[0] = x
+		node.coords[1] = y
+		print(node.coords)
 
 	@staticmethod
 	def id_to_node(node_id):
@@ -18,3 +23,4 @@ class Node:
 			return Node.id_node_dict[node_id]
 		else:
 			return Node(node_id)
+	
