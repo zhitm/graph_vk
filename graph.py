@@ -37,6 +37,8 @@ class Graph:
 		for vert in node.friends:
 			if vert.used == False:
 				self.go_in_depth(vert)
+		for node in self.nodes: #возращаем исходные значения для следующего обхода
+			node.used = False
 
 	def go_in_width(self, start_node):
 		q = deque()
