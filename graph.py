@@ -19,6 +19,7 @@ class Graph:
 		self.graph.update({node: node.friends})
 		self.node_cnt += 1
 		Node.id_node_dict.update({id: node})
+		return node
 	def add_edge(self, node1, node2):
 		node1.friends.add(node2)
 		node2.friends.add(node1)
