@@ -16,9 +16,9 @@ class Graph:
 		self.graph = {}
 		self.groups = set()
 		self.node_cnt = 0
-		self.is_connected = True
 		self.load_graph()
 		self.set_groups()
+
 
 	def add_node(self, id):
 		node = Node(id)
@@ -73,10 +73,6 @@ class Graph:
 		for pair in combinations(node.eaten_nodes, 2):
 			if pair[0] in pair[1].friends:
 				cnt += 1
-		for node1 in node.eaten_nodes:
-			if node1 in node.friends:
-				cnt += 1
-		return cnt
 
 	def merge_nodes(self, node1, node2): #объединение
 		node1.eaten_nodes += node2.eaten_nodes
@@ -88,10 +84,14 @@ class Graph:
 		for vert in node.friends:
 			if vert.used == False:
 				self.go_in_depth(vert)
+				vert.used = True
 		for node in self.nodes: #возращаем исходные значения для следующего обхода
 			node.used = False
 
+
 	def go_in_width(self, start_node):
+		ans = True
+
 		q = deque()
 		q.append(start_node)
 		while q:
@@ -101,8 +101,15 @@ class Graph:
 				if next.used == False:
 					q.append(next)
 					next.used = True
+		for node in self.nodes:
+			if node.used == False:
+				ans = False
+				break
+
 		for node in self.nodes: #возращаем исходные значения для следующего обхода
 			node.used = False
+
+		return ans
 
 	def set_node_coords(self, node, x, y):
 		node.coords[0] = x
@@ -147,13 +154,13 @@ class Graph:
 			arr = line.split()
 			id = arr[0]
 			if arr[1:] != []:
-				node = Node.id_to_node(id)
+				node = Node.id_to_node(int(id))
 				if node == None:
-					node = self.add_node(id)
+					node = self.add_node(int(id))
 				for friend_id in arr[1:]:
-					friend = Node.id_to_node(friend_id)
+					friend = Node.id_to_node(int(friend_id))
 					if friend == None:
-						friend = self.add_node(friend_id)
+						friend = self.add_node(int(friend_id))
 					self.add_edge(node, friend)
 		print('ok')
 		print('nodes at all: ' + str(self.node_cnt))
@@ -164,5 +171,7 @@ class Graph:
 
 if __name__ == '__main__':
 	g = Graph()
+	is_connected = g.go_in_width(Node.id_to_node(6))
+	print('граф связен: '+is_connected)
 
 
