@@ -66,7 +66,5 @@ if __name__ == '__main__':
 				node = Node.id_to_node(id)
 				friend = Node.id_to_node(friend_id)
 				g.add_edge(node, friend)
-		else:
-			pass
 	print('ok')
 
