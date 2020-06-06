@@ -3,7 +3,7 @@ import numpy
 
 class View:
 	def __init__(self, x_tl, y_tl, win_dx, win_dy, view_dx):  # tl = top_left
-		self.v_tl = numpy.array([x_tl, y_tl])
+		self.v_tl = numpy.array([x_tl, y_tl])             #я не очень все равно понимаю, за что отвечает эта переменная
 		self.win_dx = win_dx
 		self.win_dy = win_dy
 		self.x_to_y = win_dx / win_dy
