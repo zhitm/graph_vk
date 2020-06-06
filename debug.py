@@ -37,4 +37,4 @@ while True:
 		if commands[0] == 'del_n':
 			g.del_node(Node.id_to_node(commands[1]))
 		if commands[0] == 'setcoord':
-			Node.set_node_coords(Node.id_to_node(commands[1]),commands[2],commands[3])
+			g.set_node_coords(Node.id_to_node(commands[1]),commands[2],commands[3])
