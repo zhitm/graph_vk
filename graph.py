@@ -1,11 +1,14 @@
 from node import Node
 from collections import deque
+
+
 class Graph:
 	def __init__(self):
 		self.nodes = []
 		self.graph = {}
 		self.node_cnt = 0
 		self.is_connected = True
+
 	def add_node(self, id):
 		node = Node.id_to_node(id)
 		self.nodes.append(node)
@@ -20,6 +23,7 @@ class Graph:
 			friend.friends.discard(node)
 			self.graph.update({friend: friend.friends})
 		self.graph.pop(node)
+
 	def add_edge(self, node1, node2):
 		node1.friends.add(node2)
 		node2.friends.add(node1)
@@ -37,7 +41,7 @@ class Graph:
 		for vert in node.friends:
 			if vert.used == False:
 				self.go_in_depth(vert)
-		for node in self.nodes: #возращаем исходные значения для следующего обхода
+		for node in self.nodes:  # возращаем исходные значения для следующего обхода
 			node.used = False
 
 	def go_in_width(self, start_node):
@@ -50,7 +54,7 @@ class Graph:
 				if next.used == False:
 					q.append(next)
 					next.used = True
-		for node in self.nodes: #возращаем исходные значения для следующего обхода
+		for node in self.nodes:  # возращаем исходные значения для следующего обхода
 			node.used = False
 
 
@@ -69,4 +73,4 @@ if __name__ == '__main__':
 				friend = Node.id_to_node(friend_id)
 				g.add_edge(node, friend)
 	print('ok')
-
+	print('nodes at all: '+str(g.node_cnt))
