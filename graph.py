@@ -6,6 +6,7 @@ import threading
 import pygame
 
 C = 15000 #что значат эти переменные?
+#это физические константы. Использую их в apply_force ()
 K = 1
 M = 1
 
