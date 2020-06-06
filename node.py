@@ -9,6 +9,8 @@ class Node:
 		self.number = Node.cnt
 		self.dict_upd()
 		Node.cnt += 1
+		self.loop = 0
+		self.eaten_nodes = set() #для объединения вершин
 
 		# physics attributes
 		self.coords = numpy.array([0,0], dtype=numpy.float64)

@@ -1,6 +1,7 @@
 from node import Node
 from collections import deque
 from itertools import combinations
+import threading
 import pygame
 
 C = 15000 #что значат эти переменные?
@@ -24,12 +25,20 @@ class Graph:
 		return node
 
 	def add_edge(self, node1, node2):
+		if node1 not in self.nodes or node2 not in self.nodes:
+			print('in add_egde one of your nodes not in self.nodes')
+			while True:
+				pass
 		node1.friends.add(node2)
 		node2.friends.add(node1)
 		self.graph.update({node1: node1.friends})
 		self.graph.update({node2: node2.friends})
 
 	def del_edge(self, node1, node2):
+		if node1 not in self.nodes or node2 not in self.nodes or node2 not in node1.friends:
+			print('in del_egde this edge doesnt exist')
+			while True:
+				pass
 		node1.friends.discard(node2)
 		node2.friends.discard(node1)
 		self.graph.update({node1: node1.friends})
@@ -38,6 +47,10 @@ class Graph:
 	def del_node(self, node):
 		if node in self.nodes:
 			self.nodes.remove(node)
+		else:
+			print('in del_node you are trying to delete node what not exist')
+			while True:
+				pass
 		for friend in node.friends:
 			friend.friends.discard(node)
 			self.graph.update({friend: friend.friends})
@@ -74,7 +87,7 @@ class Graph:
 			fst = pair[0]
 			scnd = pair[1]
 			dist = ((fst.coords[0] - scnd.coords[0]) ** 2 + (fst.coords[1] - scnd.coords[1]) ** 2) ** 0.5
-			if(dist != 0):
+			if (dist != 0):
 				coulomb_force = (fst.coords - scnd.coords) * (C / (dist ** 2))
 				fst.accel += coulomb_force
 				scnd.accel -= coulomb_force
