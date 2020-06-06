@@ -1,6 +1,7 @@
 from node import Node
 from collections import deque
 from itertools import combinations
+from copy import deepcopy
 import threading
 import pygame
 
@@ -12,9 +13,11 @@ class Graph:
 	def __init__(self):
 		self.nodes = set()
 		self.graph = {}
+		self.groups = set()
 		self.node_cnt = 0
 		self.is_connected = True
 		self.load_graph()
+		self.set_groups()
 
 	def add_node(self, id):
 		node = Node(id)
@@ -46,7 +49,7 @@ class Graph:
 
 	def del_node(self, node):
 		if node in self.nodes:
-			self.nodes.remove(node)
+			self.nodes.discard(node)
 		else:
 			print('in del_node you are trying to delete node what not exist')
 			while True:
@@ -55,6 +58,22 @@ class Graph:
 			friend.friends.discard(node)
 			self.graph.update({friend: friend.friends})
 		self.graph.pop(node)
+
+	def mass_cnt(self, node1, node2): #масса ребра между группами
+		cnt = 0
+		for node in node2.eaten_nodes:
+			if node in node1.friends:
+				cnt += 1
+		if node2 in node1.friends:
+			cnt += 1
+
+		return cnt
+
+	def nodes_merger(self, node1, node2): #объединение
+		node1.eaten_nodes += node2.eaten_nodes
+		node2.eaten_nodes.clear()
+		self.groups.discard(node2)
+
 
 	def go_in_depth(self, node):
 		node.used = True
@@ -131,6 +150,8 @@ class Graph:
 		print('ok')
 		print('nodes at all: ' + str(self.node_cnt))
 
+	def set_groups(self):
+		self.groups = deepcopy(self.nodes)
 
 if __name__ == '__main__':
 	g = Graph()
