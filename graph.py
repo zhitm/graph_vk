@@ -13,13 +13,16 @@ class Graph:
 		self.graph = {}
 		self.node_cnt = 0
 		self.is_connected = True
+		self.load_graph()
+
 	def add_node(self, id):
-		node = Node.id_to_node(id)
+		node = Node(id)
 		self.nodes.add(node)
 		self.graph.update({node: node.friends})
 		self.node_cnt += 1
 		Node.id_node_dict.update({id: node})
 		return node
+
 	def add_edge(self, node1, node2):
 		node1.friends.add(node2)
 		node2.friends.add(node1)
@@ -97,20 +100,26 @@ class Graph:
 		for node in self.nodes:
 			node.draw(view, pygame, screen)
 
+	def load_graph(self):
+		file = open('members.txt', 'r')
+		for line in file:
+			line = line.strip()
+			arr = line.split()
+			id = arr[0]
+			if arr[1:] != []:
+				node = Node.id_to_node(id)
+				if node == None:
+					node = self.add_node(id)
+				for friend_id in arr[1:]:
+					friend = Node.id_to_node(friend_id)
+					if friend == None:
+						friend = self.add_node(friend_id)
+					self.add_edge(node, friend)
+		print('ok')
+		print('nodes at all: ' + str(self.node_cnt))
+
+
 if __name__ == '__main__':
 	g = Graph()
-	file = open('members.txt', 'r')
-	for line in file:
-		line = line.strip()
-		arr = line.split()
-		id = arr[0]
-		if arr[1:] != None:
-			g.add_node(id)
-			node = Node.id_to_node(id)
-			for friend_id in arr[1:]:
-				node = Node.id_to_node(id)
-				friend = Node.id_to_node(friend_id)
-				g.add_edge(node, friend)
-	print('ok')
-	print('nodes at all: '+str(g.node_cnt))
+
 

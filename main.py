@@ -11,17 +11,17 @@ SCREEN_WIDTH = 1800
 SCREEN_HEIGHT = 900
 """
 g = Graph()
-g.add_node(0)
-g.add_node(1)
-g.add_node(2)
+n0 = g.add_node(0)
+n1 = g.add_node(1)
+n2 = g.add_node(2)
 
-g.add_edge(Node.id_to_node(0), Node.id_to_node(1))
-g.add_edge(Node.id_to_node(1), Node.id_to_node(2))
-g.add_edge(Node.id_to_node(0), Node.id_to_node(2))
+g.add_edge(n0, n1)
+g.add_edge(n1, n2)
+g.add_edge(n0, n2)
 
-Node.set_node_coords(Node.id_to_node(0), 50, 50)
-Node.set_node_coords(Node.id_to_node(1), -50, -50)
-Node.set_node_coords(Node.id_to_node(2), 50, -50)
+Node.set_node_coords(n0, 50, 50)
+Node.set_node_coords(n1, -50, -50)
+Node.set_node_coords(n2, 50, -50)
 """
 
 g = Graph()
@@ -29,9 +29,9 @@ N = 200
 p = 20 / 200
 for pair in combinations(range(0, N), 2):
     if random.random() < p:
-        g.add_node(str(pair[0]))
-        g.add_node(str(pair[1]))
-        g.add_edge(Node.id_to_node(str(pair[0])), Node.id_to_node(str(pair[1])))
+        n1 = g.add_node(str(pair[0]))
+        n2 = g.add_node(str(pair[1]))
+        g.add_edge(n1, n2)
 for node in g.nodes:
     node.coords = numpy.array([random.randint(-200, 200) * 100, random.randint(-100, 100) * 100], dtype=numpy.float64)
 
