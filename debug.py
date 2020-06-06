@@ -34,7 +34,7 @@ while True:
 		if commands[0] == "print":
 			for node in g.nodes:
 				s = node.id + ' ' + str([friend.id for friend in node.friends])
-				print(s)
+				print(s, node.coords)
 		if commands[0] == 'del_n':
 			g.del_node(Node.id_to_node(commands[1]))
 		if commands[0] == 'setcoord':
