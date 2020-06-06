@@ -172,6 +172,6 @@ class Graph:
 if __name__ == '__main__':
 	g = Graph()
 	is_connected = g.go_in_width(Node.id_to_node(6))
-	print('граф связен: '+is_connected)
+	print('граф связен: '+str(is_connected))
 
 
