@@ -60,7 +60,7 @@ class Graph:
 			self.graph.update({friend: friend.friends})
 		self.graph.pop(node)
 
-	def mass_cnt(self, node1, node2): #масса ребра между группами
+	def weight_cnt(self, node1, node2): #масса ребра между группами
 		cnt = 0
 		for node in node2.eaten_nodes:
 			if node in node1.friends:
