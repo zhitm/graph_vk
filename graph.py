@@ -3,7 +3,7 @@ from collections import deque
 from itertools import combinations
 import pygame
 
-C = 15000
+C = 15000 #что значат эти переменные?
 K = 1
 M = 1
 
@@ -44,6 +44,8 @@ class Graph:
 		for vert in node.friends:
 			if vert.used == False:
 				self.go_in_depth(vert)
+		for node in self.nodes: #возращаем исходные значения для следующего обхода
+			node.used = False
 
 	def go_in_width(self, start_node):
 		q = deque()
@@ -101,9 +103,13 @@ if __name__ == '__main__':
 		line = line.strip()
 		arr = line.split()
 		id = arr[0]
-		g.add_node(id)
-		node = Node.id_to_node(id)
-		for friend_id in arr[1:]:
+		if arr[1:] != None:
+			g.add_node(id)
 			node = Node.id_to_node(id)
-			friend = Node.id_to_node(friend_id)
-			g.add_edge(node, friend)
+			for friend_id in arr[1:]:
+				node = Node.id_to_node(id)
+				friend = Node.id_to_node(friend_id)
+				g.add_edge(node, friend)
+	print('ok')
+	print('nodes at all: '+str(g.node_cnt))
+
