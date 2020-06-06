@@ -33,9 +33,6 @@ class Graph:
 		self.graph.update({node1: node1.friends})
 		self.graph.update({node2: node2.friends})
 
-	def set_node_coords(self, node, x, y):
-		node.coords[0] = x
-		node.coords[1] = y
 
 
 	def go_in_depth(self, node):

@@ -25,5 +25,10 @@ class Node:
 		else:
 			return Node(node_id)
 
+	def set_node_coords(node, x, y):
+		node.coords[0] = x
+		node.coords[1] = y
+		print(node.coords)
+
 	def draw(self, view, pygame, screen):
 		pygame.draw.circle(screen, (0, 0, 255), view.transform(self.coords[0], self.coords[1]), 30)
