@@ -9,7 +9,8 @@ add_e id1 id2
 del_e id1 id2
 friends id
 setcoord id x y
-printcoord id''')
+printcoord id
+eat id1 id2''')
 while True:
 	inp = input('>')
 	if inp == "q":
@@ -36,7 +37,8 @@ while True:
 		if commands[0] == "print":
 			for node in g.nodes:
 				s = str(node.id) + ' ' + str([friend.id for friend in node.friends])
-				print(s, node.coords)
+				s1 = str([node.id for node in node.eaten_nodes])
+				print(s, 'coords', node.coords, 'eaten', s1)
 
 		if commands[0] == 'setcoord':
 			Node.set_node_coords(Node.id_to_node(float(commands[1])),float(commands[2]),float(commands[3]))
@@ -44,4 +46,9 @@ while True:
 		if commands[0] == 'printcoord':
 			print(str(Node.id_to_node(int(commands[1])).x)+str(Node.id_to_node(int(commands[1])).y)    )
 
+		if commands[0] =='eat':
+			id1=int(commands[1])
+			id2=int(commands[2])
+			g.merge_nodes(Node.id_to_node(id1), Node.id_to_node(id2))
+			print('fine eaten')
 

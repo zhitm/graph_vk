@@ -78,7 +78,8 @@ class Graph:
 
 	def merge_nodes(self, node1, node2): #поедание одной вершины другой. (объединение, слияние съеденныъ ими. Сама вершина лежит в съеденныъ собой)
 		self.node_cnt -=1
-		node1.eaten_nodes += node2.eaten_nodes
+
+		node1.eaten_nodes = node1.eaten_nodes.union(node2.eaten_nodes)
 		node2.eaten_nodes.clear()
 		self.groups.discard(node2)
 
