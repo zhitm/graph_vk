@@ -14,7 +14,7 @@ class Graph:
 		self.graph = {} #contains pairs (node : set of its friends)
 		self.groups = set() #set из непоглощенных вершин. Каждая непоглощенная вершина в node.eaten_nodes содержит все поглощенные
 		self.node_cnt = 0
-		self.load_graph('members.txt') #загрузка графа ищ файла
+		#self.load_graph('members.txt') #загрузка графа ищ файла
 		self.set_groups() #изначально групп столько же, сколько и вершин
 
 
@@ -116,10 +116,6 @@ class Graph:
 			node.used = False
 
 		return [ans, component]
-
-	def set_node_coords(self, node, x, y):
-		node.coords[0] = x
-		node.coords[1] = y
 
 	#physics
 	def apply_force(self):  # be careful, forces must be set to zero somewhere!!!

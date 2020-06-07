@@ -3,172 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e341cdc4-a93e-488f-9df1-698d75d12d77" name="Default Changelist" comment="Merge branch 'physics' of https://github.com/zhitm/graph_vk into physics&#10;&#10;# Conflicts:&#10;#&#9;debug.py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component0.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component0.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component10.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component100.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component100.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component101.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component101.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component102.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component102.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component103.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component103.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component104.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component104.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component105.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component105.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component106.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component106.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component107.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component107.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component108.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component108.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component109.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component109.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component11.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component11.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component110.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component110.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component111.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component111.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component112.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component112.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component113.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component113.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component114.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component114.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component115.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component115.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component116.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component116.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component117.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component117.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component118.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component118.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component119.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component119.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component12.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component12.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component120.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component120.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component121.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component121.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component122.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component122.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component123.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component123.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component124.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component124.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component125.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component125.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component126.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component126.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component127.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component127.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component128.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component128.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component129.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component129.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component13.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component13.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component130.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component130.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component131.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component131.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component132.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component132.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component133.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component133.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component134.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component134.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component135.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component135.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component136.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component136.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component137.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component137.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component138.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component138.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component139.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component139.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component14.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component14.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component140.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component140.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component141.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component141.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component142.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component142.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component143.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component143.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component144.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component144.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component145.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component145.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component146.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component146.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component147.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component147.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component148.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component148.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component149.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component149.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component15.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component15.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component150.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component150.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component151.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component151.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component152.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component152.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component153.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component153.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component154.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component154.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component155.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component155.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component156.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component156.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component157.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component157.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component158.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component158.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component159.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component159.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component16.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component16.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component160.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component160.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component161.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component161.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component162.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component162.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component163.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component163.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component164.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component164.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component17.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component17.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component18.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component18.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component19.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component19.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component20.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component20.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component21.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component21.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component22.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component22.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component23.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component23.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component24.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component24.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component25.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component25.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component26.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component26.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component27.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component27.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component28.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component28.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component29.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component29.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component3.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component30.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component30.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component31.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component31.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component32.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component32.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component33.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component33.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component34.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component34.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component35.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component35.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component36.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component36.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component37.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component37.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component38.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component38.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component39.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component39.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component4.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component4.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component40.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component40.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component41.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component41.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component42.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component42.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component43.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component43.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component44.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component44.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component45.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component45.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component46.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component46.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component47.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component47.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component48.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component48.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component49.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component49.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component5.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component5.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component50.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component50.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component51.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component51.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component52.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component52.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component53.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component53.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component54.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component54.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component55.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component55.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component56.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component56.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component57.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component57.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component58.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component58.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component59.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component59.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component6.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component6.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component60.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component60.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component61.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component61.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component62.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component62.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component63.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component63.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component64.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component64.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component65.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component65.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component66.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component66.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component67.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component67.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component68.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component68.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component69.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component69.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component7.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component7.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component70.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component70.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component71.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component71.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component72.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component72.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component73.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component73.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component74.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component74.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component75.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component75.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component76.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component76.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component77.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component77.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component78.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component78.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component79.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component79.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component8.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component8.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component80.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component80.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component81.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component81.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component82.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component82.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component83.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component83.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component84.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component84.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component85.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component85.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component86.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component86.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component87.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component87.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component88.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component88.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component89.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component89.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component9.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component9.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component90.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component90.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component91.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component91.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component92.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component92.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component93.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component93.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component94.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component94.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component95.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component95.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component96.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component96.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component97.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component97.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component98.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component98.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/component99.txt" beforeDir="false" afterPath="$PROJECT_DIR$/components/component99.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/edge.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug.py" beforeDir="false" afterPath="$PROJECT_DIR$/debug.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graph.py" beforeDir="false" afterPath="$PROJECT_DIR$/graph.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -191,7 +26,7 @@
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.graph">
+  <component name="RunManager" selected="Python.debug">
     <configuration name="debug" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="graph_vk" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -299,10 +134,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.debug" />
         <item itemvalue="Python.graph" />
         <item itemvalue="Python.exp" />
         <item itemvalue="Python.experiment" />
-        <item itemvalue="Python.debug" />
         <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
@@ -326,22 +161,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1591458145705" />
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1591520564204">
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1591522785396">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591520564204" />
-    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1591520564204">
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591522785396" />
+    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1591522785396">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591520564204" />
-    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1591520564204">
+    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591522785396" />
+    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1591522785396">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591520564204" />
-    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1591520564204">
+    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591522785396" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1591522785396">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591520564204" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591522785396" />
     <state x="184" y="86" key="MergeDialog" timestamp="1591464164846">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -358,5 +193,16 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="769" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1591475948551" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/node.py</url>
+          <line>9</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
