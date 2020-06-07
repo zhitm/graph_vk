@@ -79,6 +79,7 @@ class Graph:
 				cnt += 1
 
 	def merge_nodes(self, node1, node2): #объединение
+		# node_cnt ?
 		node1.eaten_nodes += node2.eaten_nodes
 		node2.eaten_nodes.clear()
 		self.groups.discard(node2)
