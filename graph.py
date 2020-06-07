@@ -2,6 +2,7 @@ from node import Node
 from collections import deque
 from itertools import combinations
 from time import time
+from copy import deepcopy
 import os
 C = 15000 #что значат эти переменные?
 #это физические константы. Использую их в apply_force ()
@@ -75,6 +76,7 @@ class Graph:
 		for pair in combinations(node.eaten_nodes, 2):
 			if pair[0] in pair[1].friends:
 				cnt += 1
+		node.loop = cnt
 
 	def merge_nodes(self, node1, node2): #поедание одной вершины другой. (объединение, слияние съеденныъ ими. Сама вершина лежит в съеденныъ собой)
 		'''
@@ -82,7 +84,6 @@ class Graph:
 		при поедании вершина остается в графе (self.nodes)
 		однако групп становится меньше 	(self.groups)
 		группа определяется главной вершиной
-
 
 		'''
 		self.node_cnt -=1
@@ -183,6 +184,7 @@ class Graph:
 
 
 	def get_components_files(self):  #файлики со всеми компонентами связности
+		nodes = deepcopy(g.nodes)
 		path = os.path.dirname(__file__) + '\\components'
 		if not os.path.exists(path):
 			os.mkdir(path)
@@ -191,13 +193,13 @@ class Graph:
 		txt = open(path + '\\component' + '0' + '.txt', 'w')
 		for node in is_connected[1]:
 			txt.write(str(node.id) + '\n')
-		g.nodes -= is_connected[1]
+		nodes -= is_connected[1]
 		print(len(is_connected[1]))
 		txt.close()
 		cnt = 1
 		while is_connected[0] != True:
-			node = g.nodes.pop()
-			g.nodes.add(node)
+			node = nodes.pop()
+			nodes.add(node)
 			is_connected = g.go_in_width(node)
 			print(len(is_connected[1]))
 			txt = open(path + '\\component' + str(cnt) + '.txt', 'w')
@@ -205,7 +207,7 @@ class Graph:
 			for node in is_connected[1]:
 				txt.write(str(node.id) + '\n')
 
-			g.nodes -= is_connected[1]
+			nodes -= is_connected[1]
 			txt.close()
 		print('cnt: ' + str(cnt))
 
@@ -213,3 +215,17 @@ if __name__ == '__main__':
 	g = Graph()
 
 
+'''
+cписок функций графа:
+add_node(self, id)
+del_node(self, node)
+add_edge(self, node1, node2)
+del_edge(self, node1, node2)
+merge_nodes(self, node1, node2)
+weight_cnt(self, node1, node2)
+loop_cnt(self, node)
+go_in_width(self, start_node)
+load_graph(self, filename)
+move(self, delta_t)
+draw(self, view, pygame, screen)
+'''
