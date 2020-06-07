@@ -1,4 +1,5 @@
 import numpy
+from collections import defaultdict
 class Node:
 	id_node_dict = {}
 	cnt = 0
@@ -20,7 +21,7 @@ class Node:
 		self.current_group = None
 		self.eaten_ids = {self.id} #a u sure maybe {self}??
 
-		self.friends_lv = {}
+		self.friends_lv = defaultdict(int)
 
 	def dict_upd(self):
 		Node.id_node_dict.update({self.id: self})

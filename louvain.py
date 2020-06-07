@@ -25,10 +25,7 @@ def new_friends_format(nodes):
 			node.friends_lv.update({friend: 1})
 
 def loop_cnt(node):
-	if node.friends_lv.get(node) == None:
-		return 0
-	else:
-		return node.friends_lv.get(node)
+	return node.friends_lv[node]
 
 def k_iin_f(node, group):
 	mass = 0
@@ -52,7 +49,10 @@ def find_dQ(node, group):
 	sum_tot = int(sum_tot_f(node)) #+
 	k_i = int(loop_cnt(node)) + int(sum_tot_f(node)) #+
 
+
 	dQ = ( (sum_in + 2*k_iin)/(2*M) -((sum_tot + k_i)/(2*M))**2) - (sum_in/(2*M) - (sum_tot/(2*M))**2 - (k_i/(2*M))**2)
+	if node in group:
+		return 0
 
 	return dQ
 
@@ -66,9 +66,9 @@ for el in g.nodes:
 groups = []
 
 
-def louvain():
+def louvain(g, groups):
 	reset_groups()
-	new_friends_format(nodes)
+	new_friends_format(g.nodes)
 	cnt = 0
 	while True:
 		mozhem = True
@@ -76,24 +76,24 @@ def louvain():
 			cnt+=1
 			print(cnt)
 			mozhem = False
-			for node in nodes:
+			for node in g.nodes:
 
 				group = max(groups, key=lambda group: find_dQ(node, group))
 				possible_dQ = find_dQ(node, group)
-				if possible_dQ < 0:
+				if possible_dQ < 0.001:
 					pass
 				else:
 					g.Q += possible_dQ
 					move_to(node, group)
 					mozhem = True
 
-		g.merge_groups()
-		g.reset_groups()
+		merge_groups(groups)
+		reset_groups()
 		print('ok')
 		break
 
 
-def merge_groups():  # DONE
+def merge_groups(groups):  # DONE
 	for group in groups:
 		merge_group(group)
 
@@ -109,8 +109,8 @@ def merge_group(group):  # DONE
 	node_0 = group.pop()
 
 	for node in group:
-		node.pop()
 		node_0 = merge_nodes(node_0, node)
+	group.clear()
 	group.add(node_0)
 
 	return group
@@ -120,21 +120,21 @@ def merge_group(group):  # DONE
 
 def merge_nodes(node_1, node_2):  # DONE
 	new_node = Node(Node.cnt*(-1))
-	for friend, mass in node_1.friends_lv:
+	for friend, mass in node_1.friends_lv.items():
 		new_node.friends_lv.update({friend: mass})
 
-	for friend, mass in node_2.friends_lv:
-		if friend not in new_node.friends_lv.keys:
+	for friend, mass in node_2.friends_lv.items():
+		if friend not in new_node.friends_lv:
 			new_node.friends_lv.update({friend: mass})
 		else:
-			mass1 = new_node.friends_lv.get(friend)
+			mass1 = new_node.friends_lv[friend]
 			new_node.friends_lv.update({friend: mass + mass1})
 
 	for friend in new_node.friends_lv:
 		mass = new_node.friends_lv.get(friend)
 		friend.friends_lv.update({new_node: mass})
 
-	new_node.eaten_ids = node_1.eaten_ids + node_2.eaten_ids
+	new_node.eaten_ids = node_1.eaten_ids | node_2.eaten_ids
 	nodes.add(new_node)
 	nodes.discard(node_1)
 	nodes.discard(node_2)
@@ -157,4 +157,4 @@ def move_to(node, group):  # DONE
 	group.add(node)
 
 
-louvain()
+louvain(g, groups)
