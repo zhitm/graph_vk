@@ -2,9 +2,9 @@ from graph import Graph
 from node import Node
 from additional_graph_methods import make_subset
 g = Graph()
-g.load_graph('members.txt')
+g.load_graph('members_test.txt')
 component_nodes = []
-component_file = open('component5.txt', 'r')
+component_file = open('component.txt', 'r')
 for line in component_file:
 	line.strip()
 	component_nodes.append(Node.id_to_node(line))
@@ -19,31 +19,38 @@ for node in g.nodes:
 	k = len(node.friends)
 	g.Q = -0.25 * 1 / (M ** 2) * k ** 2
 
+def new_friends_format(nodes):
+	for node in nodes:
+		for friend in node.friends:
+			node.friends_lv.update({friend: 1})
 
 def loop_cnt(node):
-	return node.friends[node]
+	if node.friends_lv.get(node) == None:
+		return 0
+	else:
+		return node.friends_lv.get(node)
 
 def k_iin_f(node, group):
 	mass = 0
-	for friend in node.friends:
+	for friend in node.friends_lv:
 		if friend in group:
-			mass += node.friends.get(friend)
+			mass += node.friends_lv.get(friend)
 	return mass
 
 def sum_tot_f(node):
 	mass = 0
-	for friend in node.friends:
+	for friend in node.friends_lv:
 		if friend not in node.eaten_ids:
-			mass += node.friends.get(friend)
+			mass += node.friends_lv.get(friend)
 	return mass
 
 
 
 def find_dQ(node, group):
-	sum_in = loop_cnt(node) #+
-	k_iin = k_iin_f(node, group) #+
-	sum_tot = sum_tot_f(node) #+
-	k_i = g.loop_cnt(node) + sum_tot_f(node) #+
+	sum_in = int(loop_cnt(node)) #+
+	k_iin = int(k_iin_f(node, group)) #+
+	sum_tot = int(sum_tot_f(node)) #+
+	k_i = int(loop_cnt(node)) + int(sum_tot_f(node)) #+
 
 	dQ = ( (sum_in + 2*k_iin)/(2*M) -((sum_tot + k_i)/(2*M))**2) - (sum_in/(2*M) - (sum_tot/(2*M))**2 - (k_i/(2*M))**2)
 
@@ -56,14 +63,18 @@ for el in g.nodes:
 
 
 
-groups = set()
+groups = []
 
 
 def louvain():
 	reset_groups()
+	new_friends_format(nodes)
+	cnt = 0
 	while True:
 		mozhem = True
 		while mozhem:
+			cnt+=1
+			print(cnt)
 			mozhem = False
 			for node in nodes:
 
@@ -78,7 +89,8 @@ def louvain():
 
 		g.merge_groups()
 		g.reset_groups()
-		continue
+		print('ok')
+		break
 
 
 def merge_groups():  # DONE
@@ -88,7 +100,7 @@ def merge_groups():  # DONE
 
 def merge_group(group):  # DONE
 	if len(group) == 0:
-		groups.discard(group)
+		groups.remove(group)
 		return None
 
 	if len(group) == 1:
@@ -108,19 +120,19 @@ def merge_group(group):  # DONE
 
 def merge_nodes(node_1, node_2):  # DONE
 	new_node = Node(Node.cnt*(-1))
-	for friend, mass in node_1.friends:
-		new_node.friends.update({friend: mass})
+	for friend, mass in node_1.friends_lv:
+		new_node.friends_lv.update({friend: mass})
 
-	for friend, mass in node_2.friends:
-		if friend not in new_node.friends.keys:
-			new_node.friends.update({friend: mass})
+	for friend, mass in node_2.friends_lv:
+		if friend not in new_node.friends_lv.keys:
+			new_node.friends_lv.update({friend: mass})
 		else:
-			mass1 = new_node.friends.get(friend)
-			new_node.friends.update({friend: mass + mass1})
+			mass1 = new_node.friends_lv.get(friend)
+			new_node.friends_lv.update({friend: mass + mass1})
 
-	for friend in new_node.friends:
-		mass = new_node.friends.get(friend)
-		friend.friends.update({new_node: mass})
+	for friend in new_node.friends_lv:
+		mass = new_node.friends_lv.get(friend)
+		friend.friends_lv.update({new_node: mass})
 
 	new_node.eaten_ids = node_1.eaten_ids + node_2.eaten_ids
 	nodes.add(new_node)
@@ -132,14 +144,17 @@ def merge_nodes(node_1, node_2):  # DONE
 def reset_groups():  # DONE
 	groups.clear()
 	for node in nodes:
-		node.current_group = set(node)
-		groups.add(node.current_group)
+
+		node.current_group = set()
+		node.current_group.add(node)
+		groups.append(node.current_group)
 
 
 def move_to(node, group):  # DONE
 	if len(node.current_group) == 1:
-		groups.discard(node.current_group)
+		groups.remove(node.current_group)
 	node.current_group.discard(node)
 	group.add(node)
 
 
+louvain()
