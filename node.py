@@ -17,6 +17,9 @@ class Node:
 		self.velocity = numpy.array([0,0], dtype=numpy.float64)
 		self.accel = numpy.array([0, 0], dtype=numpy.float64)
 
+		self.current_group = None
+		self.eaten_ids = {self.id} #a u sure maybe {self}??
+
 
 	def dict_upd(self):
 		Node.id_node_dict.update({self.id: self})

@@ -63,18 +63,18 @@ class Graph:
 			friend.friends.discard(node)
 			self.graph.update({friend: friend.friends})
 		self.graph.pop(node)
-
+	''' 
 	def weight_cnt(self, node, node_dest): #считает, сколько друзей вершины node в группе node_dest
 		cnt = 0
 		for friend in node.friends:
 			if friend in node_dest.eaten_nodes:
 				cnt += 1
 		return cnt
-
+	''
 
 	def weight_with_outside_cnt(self, node):
 		edges = set()
-		if node not in g.groups:
+		if node not in self.groups:
 			print('error in weight_with_outside_cnt')
 		for n in node.eaten_nodes:
 			for friend in n.friends:
@@ -89,23 +89,20 @@ class Graph:
 			if pair[0] in pair[1].friends:
 				cnt += 1
 		node.loop = cnt
-
+	'''
+	''' 
 	def move_to_another_group(self,node, node_dest):
 		node_dest.eaten_nodes.add(node)
 		node.eaten_nodes.discard(node)
-
+	
 
 	def merge_nodes(self, node1, node2): #поедание одной вершины другой. (объединение, слияние съеденныъ ими. Сама вершина лежит в съеденныъ собой)
-		'''
-		внимание!
-		при поедании вершина остается в графе (self.nodes)
-		однако групп становится меньше 	(self.groups)
-		группа определяется главной вершиной
-		'''
+		
 		self.node_cnt -=1
 		node1.eaten_nodes = node1.eaten_nodes.union(node2.eaten_nodes)
 		node2.eaten_nodes.clear()
 		self.groups.discard(node2)
+	'''
 
 	def go_in_depth(self, node):
 		node.used = True
