@@ -12,24 +12,24 @@ class Graph:
 	def __init__(self):
 		self.nodes = set() 
 		self.graph = {} #contains pairs (node : set of its friends)
-		self.groups = set() #please, write the type of data this set will contain
+		self.groups = set() #set из непоглощенных вершин. Каждая непоглощенная вершина в node.eaten_nodes содержит все поглощенные
 		self.node_cnt = 0
-		self.load_graph() #specifically from file "member.txt"
-		self.set_groups()
+		self.load_graph('members.txt') #загрузка графа ищ файла
+		self.set_groups() #изначально групп столько же, сколько и вершин
 
 
-	def add_node(self, id):
-		# what about self.groups? should it not be updated here?
-		node = Node(id) #we might create another node with same id, even though we should not.
-				#maybe  node = Node.id_to_node(id) ?
-		self.nodes.add(node)
-		self.graph.update({node: node.friends})
-		self.node_cnt += 1 #this must not be incremented if we add an already existing element
-		Node.id_node_dict.update({id: node}) #it will be updated in a constuctor fron Node.id_to_node(id), if the id was never
-							#met before
-		return node
+	def add_node(self, id): #добавление вершины. Возвращает объект класса Node. если уже была создана, то вернет то, что было создано ранее
+		if Node.id_to_node(id) != None:
+			return Node.id_to_node()
+		else:
+			node = Node(id)
+			self.groups.add(node)
+			self.nodes.add(node)
+			self.graph.update({node: node.friends})
+			self.node_cnt += 1
+			return node
 
-	def add_edge(self, node1, node2):
+	def add_edge(self, node1, node2): #добавляет ребро между СУЩЕСТВУЮЩИМИ вершинами.
 		if node1 not in self.nodes or node2 not in self.nodes:
 			print('in add_egde one of your nodes not in self.nodes')
 			while True:
@@ -39,7 +39,7 @@ class Graph:
 		self.graph.update({node1: node1.friends})
 		self.graph.update({node2: node2.friends})
 
-	def del_edge(self, node1, node2):
+	def del_edge(self, node1, node2):  #удаляет лишь существующее ребро. Не удаляет вершину
 		if node1 not in self.nodes or node2 not in self.nodes or node2 not in node1.friends:
 			print('in del_egde: this edge doesnt exist')
 			while True:
@@ -49,8 +49,8 @@ class Graph:
 		self.graph.update({node1: node1.friends})
 		self.graph.update({node2: node2.friends})
 
-	def del_node(self, node):
-		# what about self.node_cnt ?
+	def del_node(self, node): #удаляет лишь существующие вершины
+		self.node_cnt -= 1
 		if node in self.nodes:
 			self.nodes.discard(node)
 		else:
@@ -62,7 +62,7 @@ class Graph:
 			self.graph.update({friend: friend.friends})
 		self.graph.pop(node)
 
-	def weight_cnt(self, node1, node2): #масса ребра между группами
+	def weight_cnt(self, node1, node2): #масса ребра между группами. если их нет, вернет 0
 		cnt = 0
 		for node in node1.eaten_nodes:
 			for eaten_by_node2 in node2.eaten_nodes:
@@ -70,14 +70,14 @@ class Graph:
 					cnt += 1
 		return cnt
 
-	def loop_cnt(self, node):
+	def loop_cnt(self, node): #считает количество ребер внутри группы (съеденных вершин кем-то)
 		cnt = 0
 		for pair in combinations(node.eaten_nodes, 2):
 			if pair[0] in pair[1].friends:
 				cnt += 1
 
-	def merge_nodes(self, node1, node2): #объединение
-		# node_cnt ?
+	def merge_nodes(self, node1, node2): #поедание одной вершины другой. (объединение, слияние съеденныъ ими. Сама вершина лежит в съеденныъ собой)
+		self.node_cnt -=1
 		node1.eaten_nodes += node2.eaten_nodes
 		node2.eaten_nodes.clear()
 		self.groups.discard(node2)
@@ -92,7 +92,7 @@ class Graph:
 			node.used = False
 
 
-	def go_in_width(self, start_node): #возвращает, связен ли граф (не связен)
+	def go_in_width(self, start_node): #возвращает массив, связен ли граф и компоненту связности
 		ans = True
 
 		q = deque()
@@ -153,8 +153,8 @@ class Graph:
 		for node in self.nodes:
 			node.draw(view, pygame, screen)
 
-	def load_graph(self):
-		file = open('members.txt', 'r')
+	def load_graph(self, filename): #загрузка графа из файла
+		file = open(filename, 'r')
 		for line in file:
 			line = line.strip()
 			arr = line.split()
@@ -171,35 +171,41 @@ class Graph:
 		print('ok')
 		print('nodes at all: ' + str(self.node_cnt))
 
-	def set_groups(self):
+	def set_groups(self): #изначально групп столько же, сколько и вершин
 		for el in self.nodes:
 			self.groups.add(el)
 
+
+
+
+	def get_components_files(self):  #файлики со всеми компонентами связности
+		path = os.path.dirname(__file__) + '\\components'
+		if not os.path.exists(path):
+			os.mkdir(path)
+		is_connected = g.go_in_width(Node.id_to_node(6))
+		print('граф связен: ' + str(is_connected[0]))
+		txt = open(path + '\\component' + '0' + '.txt', 'w')
+		for node in is_connected[1]:
+			txt.write(str(node.id) + '\n')
+		g.nodes -= is_connected[1]
+		print(len(is_connected[1]))
+		txt.close()
+		cnt = 1
+		while is_connected[0] != True:
+			node = g.nodes.pop()
+			g.nodes.add(node)
+			is_connected = g.go_in_width(node)
+			print(len(is_connected[1]))
+			txt = open(path + '\\component' + str(cnt) + '.txt', 'w')
+			cnt += 1
+			for node in is_connected[1]:
+				txt.write(str(node.id) + '\n')
+
+			g.nodes -= is_connected[1]
+			txt.close()
+		print('cnt: ' + str(cnt))
+
 if __name__ == '__main__':
 	g = Graph()
-	path = os.path.dirname(__file__)+'\\components'
-	if not os.path.exists(path):
-		os.mkdir(path)
-	is_connected = g.go_in_width(Node.id_to_node(6))
-	print('граф связен: '+str(is_connected[0]))
-	txt = open(path+'\\component' + '0' + '.txt', 'w')
-	for node in is_connected[1]:
-		txt.write(str(node.id) + '\n')
-	g.nodes -=is_connected[1]
-	print(len(is_connected[1]))
-	txt.close()
-	cnt=1
-	while is_connected[0] != True:
-	#while cnt<3:
-		node = g.nodes.pop()
-		g.nodes.add(node)
-		is_connected = g.go_in_width(node)
-		print(len(is_connected[1]))
-		txt = open(path+'\\component'+str(cnt)+'.txt', 'w')
-		cnt +=1
-		for node in is_connected[1]:
-			txt.write(str(node.id)+'\n')
-		
-		g.nodes -= is_connected[1]
-		txt.close()
+
 
