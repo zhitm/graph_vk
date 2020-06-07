@@ -23,7 +23,7 @@ class Node:
 	@staticmethod
 	def id_to_node(node_id):
 		return Node.id_node_dict.get(node_id)
-
+	@staticmethod
 	def set_node_coords(node, x, y):
 		node.coords[0] = x
 		node.coords[1] = y

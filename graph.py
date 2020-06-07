@@ -1,10 +1,8 @@
 from node import Node
 from collections import deque
 from itertools import combinations
-from copy import deepcopy
-import threading
-import pygame
-
+from time import time
+import os
 C = 15000 #что значат эти переменные?
 #это физические константы. Использую их в apply_force ()
 K = 1
@@ -89,7 +87,7 @@ class Graph:
 			node.used = False
 
 
-	def go_in_width(self, start_node):
+	def go_in_width(self, start_node): #возвращает, связен ли граф (не связен)
 		ans = True
 
 		q = deque()
@@ -105,11 +103,14 @@ class Graph:
 			if node.used == False:
 				ans = False
 				break
+		component = set()
 
 		for node in self.nodes: #возращаем исходные значения для следующего обхода
+			if node.used == True:
+				component.add(node)
 			node.used = False
 
-		return ans
+		return [ans, component]
 
 	def set_node_coords(self, node, x, y):
 		node.coords[0] = x
@@ -171,7 +172,29 @@ class Graph:
 
 if __name__ == '__main__':
 	g = Graph()
+	path = os.path.dirname(__file__)+'\\components'
+	if not os.path.exists(path):
+		os.mkdir(path)
 	is_connected = g.go_in_width(Node.id_to_node(6))
-	print('граф связен: '+str(is_connected))
-
+	print('граф связен: '+str(is_connected[0]))
+	txt = open(path+'\\component' + '0' + '.txt', 'w')
+	for node in is_connected[1]:
+		txt.write(str(node.id) + '\n')
+	g.nodes -=is_connected[1]
+	print(len(is_connected[1]))
+	txt.close()
+	cnt=1
+	while is_connected[0] != True:
+	#while cnt<3:
+		node = g.nodes.pop()
+		g.nodes.add(node)
+		is_connected = g.go_in_width(node)
+		print(len(is_connected[1]))
+		txt = open(path+'\\component'+str(cnt)+'.txt', 'w')
+		cnt +=1
+		for node in is_connected[1]:
+			txt.write(str(node.id)+'\n')
+		
+		g.nodes -= is_connected[1]
+		txt.close()
 
