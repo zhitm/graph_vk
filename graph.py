@@ -184,7 +184,9 @@ class Graph:
 
 
 	def get_components_files(self):  #файлики со всеми компонентами связности
-		nodes = deepcopy(g.nodes)
+		nodes = set()
+		for el in self.nodes:
+			nodes.add(el)
 		path = os.path.dirname(__file__) + '\\components'
 		if not os.path.exists(path):
 			os.mkdir(path)
@@ -198,7 +200,10 @@ class Graph:
 		txt.close()
 		cnt = 1
 		while is_connected[0] != True:
-			node = nodes.pop()
+			if nodes:
+				node = nodes.pop()
+			else:
+				break
 			nodes.add(node)
 			is_connected = g.go_in_width(node)
 			print(len(is_connected[1]))
@@ -213,7 +218,8 @@ class Graph:
 
 if __name__ == '__main__':
 	g = Graph()
-
+	g.load_graph('members.txt')
+	g.get_components_files()
 
 '''
 cписок функций графа:
