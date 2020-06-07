@@ -12,20 +12,23 @@ M = 1
 
 class Graph:
 	def __init__(self):
-		self.nodes = set()
-		self.graph = {}
-		self.groups = set()
+		self.nodes = set() 
+		self.graph = {} #contains pairs (node : set of its friends)
+		self.groups = set() #please, write the type of data this set will contain
 		self.node_cnt = 0
-		self.load_graph()
+		self.load_graph() #specifically from file "member.txt"
 		self.set_groups()
 
 
 	def add_node(self, id):
-		node = Node(id)
+		# what about self.groups? should it not be updated here?
+		node = Node(id) #we might create another node with same id, even though we should not.
+				#maybe  node = Node.id_to_node(id) ?
 		self.nodes.add(node)
 		self.graph.update({node: node.friends})
-		self.node_cnt += 1
-		Node.id_node_dict.update({id: node})
+		self.node_cnt += 1 #this must not be incremented if we add an already existing element
+		Node.id_node_dict.update({id: node}) #it will be updated in a constuctor fron Node.id_to_node(id), if the id was never
+							#met before
 		return node
 
 	def add_edge(self, node1, node2):
@@ -40,7 +43,7 @@ class Graph:
 
 	def del_edge(self, node1, node2):
 		if node1 not in self.nodes or node2 not in self.nodes or node2 not in node1.friends:
-			print('in del_egde this edge doesnt exist')
+			print('in del_egde: this edge doesnt exist')
 			while True:
 				pass
 		node1.friends.discard(node2)
@@ -49,6 +52,7 @@ class Graph:
 		self.graph.update({node2: node2.friends})
 
 	def del_node(self, node):
+		# what about self.node_cnt ?
 		if node in self.nodes:
 			self.nodes.discard(node)
 		else:
