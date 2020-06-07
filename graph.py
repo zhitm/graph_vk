@@ -18,7 +18,7 @@ class Graph:
 		self.node_cnt = 0
 		#self.load_graph('members.txt') #загрузка графа ищ файла
 		self.set_groups() #изначально групп столько же, сколько и вершин
-
+		self.Q = None
 
 	def add_node(self, id): #добавление вершины. Возвращает объект класса Node. если уже была создана, то вернет то, что было создано ранее
 		if Node.id_to_node(id) != None:
@@ -64,13 +64,24 @@ class Graph:
 			self.graph.update({friend: friend.friends})
 		self.graph.pop(node)
 
-	def weight_cnt(self, node1, node2): #масса ребра между группами. если их нет, вернет 0
+	def weight_cnt(self, node, node_dest): #считает, сколько друзей вершины node в группе node_dest
 		cnt = 0
-		for node in node1.eaten_nodes:
-			for eaten_by_node2 in node2.eaten_nodes:
-				if node in eaten_by_node2.friends:
-					cnt += 1
+		for friend in node.friends:
+			if friend in node_dest.eaten_nodes:
+				cnt += 1
 		return cnt
+
+
+	def weight_with_outside_cnt(self, node):
+		edges = set()
+		if node not in g.groups:
+			print('error in weight_with_outside_cnt')
+		for n in node.eaten_nodes:
+			for friend in n.friends:
+				if friend not in node.eaten_nodes:
+					edges.add(friend)
+		return len(edges)
+
 
 	def loop_cnt(self, node): #считает количество ребер внутри группы (съеденных вершин кем-то)
 		cnt = 0
@@ -78,6 +89,11 @@ class Graph:
 			if pair[0] in pair[1].friends:
 				cnt += 1
 		node.loop = cnt
+
+	def move_to_another_group(self,node, node_dest):
+		node_dest.eaten_nodes.add(node)
+		node.eaten_nodes.discard(node)
+
 
 	def merge_nodes(self, node1, node2): #поедание одной вершины другой. (объединение, слияние съеденныъ ими. Сама вершина лежит в съеденныъ собой)
 		'''

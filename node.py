@@ -17,6 +17,7 @@ class Node:
 		self.velocity = numpy.array([0,0], dtype=numpy.float64)
 		self.accel = numpy.array([0, 0], dtype=numpy.float64)
 
+
 	def dict_upd(self):
 		Node.id_node_dict.update({self.id: self})
 
