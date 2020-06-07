@@ -143,8 +143,10 @@ class Graph:
 
 	def move(self, delta_t):
 		for node in self.nodes:
-			node.velocity += node.accel * delta_t
-			node.coords += node.velocity * delta_t
+			node.velocity[0] += node.accel[0] * delta_t
+			node.velocity[1] += node.accel[1] * delta_t
+			node.coords[0] += node.velocity[0] * delta_t
+			node.coords[1] += node.velocity[1] * delta_t
 			node.accel = (0,0)  # set to zero
 			#energy dissipation
 			node.velocity /= 1.01

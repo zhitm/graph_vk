@@ -50,6 +50,7 @@ scroll_multiplier = 1
 should_get_id =  False
 
 click_cnt = 0
+pairs = combinations(component.nodes, 2)
 
 while running:
 	for event in pygame.event.get():
@@ -98,11 +99,10 @@ while running:
 				print(click_cnt, "<-------------------- https://vk.com/id" + str(node.id))
 		click_cnt += 1
 
-
+#pairs = combinations(component.nodes, 2)
 
 	screen.fill((255, 255, 255))
 	threads_cnt = 5
-	pairs = combinations(component.nodes, 2)
 	pair_array = [x for x in pairs]
 	cnt_comp = len(pair_array)
 	for i in range(threads_cnt-1):
