@@ -1,6 +1,7 @@
 import pygame
 import numpy
 import random
+from time import time
 from node import Node
 from view import View
 from graph import Graph
@@ -14,7 +15,7 @@ SCREEN_HEIGHT = 900
 g = Graph()
 g.load_graph('members.txt')
 component_nodes = []
-component_file = open('component5.txt', 'r')
+component_file = open('component0.txt', 'r')
 for line in component_file:
 	line.strip()
 	component_nodes.append(Node.id_to_node(line))
@@ -50,8 +51,7 @@ scroll_multiplier = 1
 should_get_id =  False
 
 click_cnt = 0
-pairs = combinations(component.nodes, 2)
-
+pairs = [i for i in combinations(component.nodes, 2)]
 while running:
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
@@ -99,22 +99,32 @@ while running:
 				print(click_cnt, "<-------------------- https://vk.com/id" + str(node.id))
 		click_cnt += 1
 
-#pairs = combinations(component.nodes, 2)
+	#pairs = combinations(component.nodes, 2)
 
 	screen.fill((255, 255, 255))
-	threads_cnt = 5
-	pair_array = [x for x in pairs]
+	threads_cnt = 2
+	threads = []
+	#pair_array = [x for x in pairs]
+	pair_array = pairs
 	cnt_comp = len(pair_array)
+	start_time = time()
 	for i in range(threads_cnt-1):
 		array = pair_array[:cnt_comp//threads_cnt]
 		pair_array = pair_array[cnt_comp//threads_cnt:]
-		Thread(target=component.apply_force, args=(array,)).start()
+		th = Thread(target=component.apply_force, args=(array,))
+		th.start()
+		threads.append(th)
 		#component.apply_force(array)
-	Thread(target=component.apply_force, args=(pair_array,)).start()
+	th=Thread(target=component.apply_force, args=(pair_array,))
+	th.start()
+	threads.append(th)
 
 	#component.apply_force(pair_array)
-	component.draw(view, pygame, screen)
 	component.move(0.01)
+	component.draw(view, pygame, screen)
+	for thr in threads:
+		thr.join()
+	print(time()-start_time)
 
 	pygame.display.flip()
 
