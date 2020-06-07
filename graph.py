@@ -84,7 +84,6 @@ class Graph:
 		при поедании вершина остается в графе (self.nodes)
 		однако групп становится меньше 	(self.groups)
 		группа определяется главной вершиной
-
 		'''
 		self.node_cnt -=1
 		node1.eaten_nodes = node1.eaten_nodes.union(node2.eaten_nodes)
@@ -127,8 +126,9 @@ class Graph:
 		return [ans, component]
 
 	#physics
-	def apply_force(self):  # be careful, forces must be set to zero somewhere!!!
-		for pair in combinations(self.nodes, 2):
+	def apply_force(self, pair_array):  # be careful, forces must be set to zero somewhere!!!
+	#	for pair in combinations(self.nodes, 2):
+		for pair in pair_array:
 			fst = pair[0]
 			scnd = pair[1]
 			dist = ((fst.coords[0] - scnd.coords[0]) ** 2 + (fst.coords[1] - scnd.coords[1]) ** 2) ** 0.5

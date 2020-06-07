@@ -11,7 +11,7 @@ class Node:
 		Node.cnt += 1
 		self.loop = 0
 		self.eaten_nodes = {self} #для объединения вершин
-
+		self.friend_bool = {} #{friend: true/false} для потока false - ребро было нарисовано
 		# physics attributes
 		self.coords = numpy.array([0,0], dtype=numpy.float64)
 		self.velocity = numpy.array([0,0], dtype=numpy.float64)

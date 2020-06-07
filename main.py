@@ -6,14 +6,13 @@ from view import View
 from graph import Graph
 from itertools import combinations
 from additional_graph_methods import make_subset
-
+from threading import Thread
 pygame.init()
 SCREEN_WIDTH = 1800
 SCREEN_HEIGHT = 900
 
 g = Graph()
 g.load_graph('members.txt')
-
 component_nodes = []
 component_file = open('component5.txt', 'r')
 for line in component_file:
@@ -30,6 +29,12 @@ for node in component.nodes:
 for node in component.nodes:
 	s = str(node.id) + ' ' + str([friend.id for friend in node.friends])
 	print(s, node.coords)
+''' 
+for node in component.nodes:
+	for friend in node.friends:
+		node.friend_bool.update({friend: False}) #false - ребро не было использовано
+print('done')
+'''
 
 view = View(-400 * 100, 200 * 100, SCREEN_WIDTH, SCREEN_HEIGHT, 800 * 100)
 
@@ -43,6 +48,7 @@ click_pos = numpy.array([0,0])
 origin_before_click = ([0, 0])
 scroll_multiplier = 1
 should_get_id =  False
+
 click_cnt = 0
 
 while running:
@@ -95,8 +101,19 @@ while running:
 
 
 	screen.fill((255, 255, 255))
+	threads_cnt = 5
+	pairs = combinations(component.nodes, 2)
+	pair_array = [x for x in pairs]
+	cnt_comp = len(pair_array)
+	for i in range(threads_cnt-1):
+		array = pair_array[:cnt_comp//threads_cnt]
+		pair_array = pair_array[cnt_comp//threads_cnt:]
+		Thread(target=component.apply_force, args=(array,)).start()
+		#component.apply_force(array)
+	Thread(target=component.apply_force, args=(pair_array,)).start()
+
+	#component.apply_force(pair_array)
 	component.draw(view, pygame, screen)
-	component.apply_force()
 	component.move(0.01)
 
 	pygame.display.flip()
