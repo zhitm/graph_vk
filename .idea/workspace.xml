@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e341cdc4-a93e-488f-9df1-698d75d12d77" name="Default Changelist" comment="Merge branch 'physics' of https://github.com/zhitm/graph_vk into physics&#10;&#10;# Conflicts:&#10;#&#9;debug.py">
+      <change afterPath="$PROJECT_DIR$/communities_with_names.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/louvain.py" beforeDir="false" afterPath="$PROJECT_DIR$/louvain.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node.py" beforeDir="false" afterPath="$PROJECT_DIR$/node.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +25,8 @@
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.louvain">
-    <configuration name="debug" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.communities_with_names">
+    <configuration name="communities_with_names" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="graph_vk" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -39,7 +38,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/debug.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/communities_with_names.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -134,11 +133,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.communities_with_names" />
         <item itemvalue="Python.louvain" />
         <item itemvalue="Python.tmp" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.graph" />
-        <item itemvalue="Python.debug" />
       </list>
     </recent_temporary>
   </component>
@@ -161,22 +160,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1591458145705" />
-    <state width="1899" height="253" key="GridCell.Tab.0.bottom" timestamp="1591563314407">
+    <state width="1899" height="253" key="GridCell.Tab.0.bottom" timestamp="1591646205989">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="253" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591563314407" />
-    <state width="1899" height="253" key="GridCell.Tab.0.center" timestamp="1591563314407">
+    <state width="1899" height="253" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591646205989" />
+    <state width="1899" height="253" key="GridCell.Tab.0.center" timestamp="1591646205989">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="253" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591563314407" />
-    <state width="1899" height="253" key="GridCell.Tab.0.left" timestamp="1591563314407">
+    <state width="1899" height="253" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591646205989" />
+    <state width="1899" height="253" key="GridCell.Tab.0.left" timestamp="1591646205988">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="253" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591563314407" />
-    <state width="1899" height="253" key="GridCell.Tab.0.right" timestamp="1591563314407">
+    <state width="1899" height="253" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591646205988" />
+    <state width="1899" height="253" key="GridCell.Tab.0.right" timestamp="1591646205989">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="253" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591563314407" />
+    <state width="1899" height="253" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591646205989" />
     <state width="1899" height="348" key="GridCell.Tab.1.bottom" timestamp="1591537353149">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -217,11 +216,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/graph.py</url>
-          <line>210</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/graph.py</url>
           <line>144</line>
