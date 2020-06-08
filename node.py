@@ -1,5 +1,11 @@
 import numpy
 from collections import defaultdict
+
+NODE_RADIUS = 3
+
+"""
+Класс вершины графа
+"""
 class Node:
 	id_node_dict = {}
 	cnt = 0
@@ -9,23 +15,20 @@ class Node:
 		self.friends = set()
 		self.used = False #переменная для обходов, сразу после обхода превращается обратно в False
 		self.number = Node.cnt
-		self.dict_upd()
+		Node.id_node_dict.update({self.id: self})
 		Node.cnt += 1
-		self.loop = 0
-		self.eaten_nodes = {self} #для объединения вершин
-		self.friend_bool = {} #{friend: true/false} для потока false - ребро было нарисовано
-		# physics attributes
+
+		# используются преимущественно в лувенском алгоритме (вероятно, только в нем)
+		self.current_group = None
+		self.eaten_ids = {self.id}
+		self.friends_lv = defaultdict(int)  # словарь ребро (вершина, с которой связана self) : вес ребра
+
+		# физические параметры вершины
 		self.coords = numpy.array([0,0], dtype=numpy.float64)
 		self.velocity = numpy.array([0,0], dtype=numpy.float64)
 		self.accel = numpy.array([0, 0], dtype=numpy.float64)
 
-		self.current_group = None
-		self.eaten_ids = {self.id} #a u sure maybe {self}??
 
-		self.friends_lv = defaultdict(int)
-
-	def dict_upd(self):
-		Node.id_node_dict.update({self.id: self})
 
 	def cnt_degree(self):
 		self.degree = len(self.friends)
@@ -38,7 +41,6 @@ class Node:
 	def set_node_coords(node, x, y):
 		node.coords[0] = x
 		node.coords[1] = y
-		print(node.coords)
 
 	def draw(self, view, pygame, screen):
-		pygame.draw.circle(screen, (0, 0, 255), view.transform(self.coords[0], self.coords[1]), 3)
+		pygame.draw.circle(screen, (0, 0, 255), view.transform(self.coords[0], self.coords[1]), NODE_RADIUS)

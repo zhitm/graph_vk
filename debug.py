@@ -1,8 +1,14 @@
 from graph import Graph
 from node import Node
+
+"""
+Оболочка для проверки корректности работы класса Graph
+"""
+
 g = Graph()
+
 print('''
-sintaxis:
+syntaxis:
 add_n id
 del_n id
 add_e id1 id2
@@ -11,6 +17,7 @@ friends id
 setcoord id x y
 printcoord id
 eat id1 id2''')
+
 while True:
 	inp = input('>')
 	if inp == "q":
@@ -44,11 +51,4 @@ while True:
 			Node.set_node_coords(Node.id_to_node(float(commands[1])),float(commands[2]),float(commands[3]))
 
 		if commands[0] == 'printcoord':
-			print(str(Node.id_to_node(int(commands[1])).x)+str(Node.id_to_node(int(commands[1])).y)    )
-
-		if commands[0] =='eat':
-			id1=int(commands[1])
-			id2=int(commands[2])
-			g.merge_nodes(Node.id_to_node(id1), Node.id_to_node(id2))
-			print('fine eaten')
-
+			print(str(Node.id_to_node(int(commands[1])).x)+str(Node.id_to_node(int(commands[1])).y))

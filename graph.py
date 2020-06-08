@@ -2,11 +2,10 @@ from node import Node
 from collections import deque
 from itertools import combinations
 import numpy
-from time import time
-from copy import deepcopy
 import os
-C = 15000 #что значат эти переменные?
-#это физические константы. Использую их в apply_force ()
+
+#физические константы. Использую их в apply_force ()
+C = 15000
 K = 1
 M = 1
 
@@ -14,18 +13,14 @@ class Graph:
 	def __init__(self):
 		self.nodes = set() 
 		self.graph = {} #contains pairs (node : set of its friends)
-		self.groups = set() #set из непоглощенных вершин. Каждая непоглощенная вершина в node.eaten_nodes содержит все поглощенные
 		self.node_cnt = 0
-		#self.load_graph('members.txt') #загрузка графа ищ файла
-		self.set_groups() #изначально групп столько же, сколько и вершин
 		self.Q = None
 
 	def add_node(self, id): #добавление вершины. Возвращает объект класса Node. если уже была создана, то вернет то, что было создано ранее
-		if Node.id_to_node(id) != None:
+		if Node.id_to_node(id) is not None:
 			return Node.id_to_node(id)
 		else:
 			node = Node(id)
-			self.groups.add(node)
 			self.nodes.add(node)
 			self.graph.update({node: node.friends})
 			self.node_cnt += 1
@@ -63,46 +58,6 @@ class Graph:
 			friend.friends.discard(node)
 			self.graph.update({friend: friend.friends})
 		self.graph.pop(node)
-	''' 
-	def weight_cnt(self, node, node_dest): #считает, сколько друзей вершины node в группе node_dest
-		cnt = 0
-		for friend in node.friends:
-			if friend in node_dest.eaten_nodes:
-				cnt += 1
-		return cnt
-	''
-
-	def weight_with_outside_cnt(self, node):
-		edges = set()
-		if node not in self.groups:
-			print('error in weight_with_outside_cnt')
-		for n in node.eaten_nodes:
-			for friend in n.friends:
-				if friend not in node.eaten_nodes:
-					edges.add(friend)
-		return len(edges)
-
-
-	def loop_cnt(self, node): #считает количество ребер внутри группы (съеденных вершин кем-то)
-		cnt = 0
-		for pair in combinations(node.eaten_nodes, 2):
-			if pair[0] in pair[1].friends:
-				cnt += 1
-		node.loop = cnt
-	'''
-	''' 
-	def move_to_another_group(self,node, node_dest):
-		node_dest.eaten_nodes.add(node)
-		node.eaten_nodes.discard(node)
-	
-
-	def merge_nodes(self, node1, node2): #поедание одной вершины другой. (объединение, слияние съеденныъ ими. Сама вершина лежит в съеденныъ собой)
-		
-		self.node_cnt -=1
-		node1.eaten_nodes = node1.eaten_nodes.union(node2.eaten_nodes)
-		node2.eaten_nodes.clear()
-		self.groups.discard(node2)
-	'''
 
 	def go_in_depth(self, node):
 		node.used = True
@@ -114,9 +69,8 @@ class Graph:
 			node.used = False
 
 
-	def go_in_width(self, start_node): #возвращает массив, связен ли граф и компоненту связности
+	def go_in_width(self, start_node): #возвращает массив, связен ли граф и компоненту связности (сет вершин)
 		ans = True
-
 		q = deque()
 		q.append(start_node)
 		while q:
@@ -139,9 +93,7 @@ class Graph:
 
 		return [ans, component]
 
-	#physics
-	def apply_force(self, pair_array):  # be careful, forces must be set to zero somewhere!!!
-	#	for pair in combinations(self.nodes, 2):
+	def apply_force(self, pair_array): #физика
 		for pair in pair_array:
 			fst = pair[0]
 			scnd = pair[1]
@@ -155,13 +107,15 @@ class Graph:
 					fst.accel -= hooke_force
 					scnd.accel += hooke_force
 
+
 	def move(self, delta_t):
 		for node in self.nodes:
 			node.velocity += node.accel * delta_t
 			node.coords += node.velocity * delta_t
-			node.accel = numpy.array([0,0], dtype = numpy.float64)  # set to zero
+			node.accel = numpy.array([0,0], dtype = numpy.float64)
 			#energy dissipation
 			node.velocity /= 1.01
+
 
 	def draw(self, view, pygame, screen):
 		for pair in combinations(self.nodes, 2):
@@ -171,6 +125,7 @@ class Graph:
 
 		for node in self.nodes:
 			node.draw(view, pygame, screen)
+
 
 	def load_graph(self, filename): #загрузка графа из файла
 		file = open(filename, 'r')
@@ -187,30 +142,24 @@ class Graph:
 					if friend == None:
 						friend = self.add_node(int(friend_id))
 					self.add_edge(node, friend)
-		print('ok')
-		print('nodes at all: ' + str(self.node_cnt))
-
-	def set_groups(self): #изначально групп столько же, сколько и вершин
-		for el in self.nodes:
-			self.groups.add(el)
+		print('Файл успешно считался.')
+		print('Число вершин в графе (не учитывая изолированные): ' + str(self.node_cnt))
 
 
-
-
-	def get_components_files(self):  #файлики со всеми компонентами связности
+	def create_components_files(self):  #файлики со всеми компонентами связности
 		nodes = set()
 		for el in self.nodes:
 			nodes.add(el)
-		path = os.path.dirname(__file__) + '\\components'
+		path = os.path.dirname(__file__) + '\\created_components'
 		if not os.path.exists(path):
 			os.mkdir(path)
-		is_connected = g.go_in_width(Node.id_to_node(6))
-		print('граф связен: ' + str(is_connected[0]))
+
+		is_connected = self.go_in_width(Node.id_to_node(6)) #6 - вершина, с которой начинаем обход
+		print('Граф связен: ' + str(is_connected[0]))
 		txt = open(path + '\\component' + '0' + '.txt', 'w')
 		for node in is_connected[1]:
 			txt.write(str(node.id) + '\n')
 		nodes -= is_connected[1]
-		print(len(is_connected[1]))
 		txt.close()
 		cnt = 1
 		while is_connected[0] != True:
@@ -219,8 +168,7 @@ class Graph:
 			else:
 				break
 			nodes.add(node)
-			is_connected = g.go_in_width(node)
-			print(len(is_connected[1]))
+			is_connected = self.go_in_width(node)
 			txt = open(path + '\\component' + str(cnt) + '.txt', 'w')
 			cnt += 1
 			for node in is_connected[1]:
@@ -228,24 +176,5 @@ class Graph:
 
 			nodes -= is_connected[1]
 			txt.close()
-		print('cnt: ' + str(cnt))
+		print('Число компонент связности: ' + str(cnt))
 
-if __name__ == '__main__':
-	g = Graph()
-	g.load_graph('members.txt')
-	g.get_components_files()
-
-'''
-cписок функций графа:
-add_node(self, id)
-del_node(self, node)
-add_edge(self, node1, node2)
-del_edge(self, node1, node2)
-merge_nodes(self, node1, node2)
-weight_cnt(self, node1, node2)
-loop_cnt(self, node)
-go_in_width(self, start_node)
-load_graph(self, filename)
-move(self, delta_t)
-draw(self, view, pygame, screen)
-'''
