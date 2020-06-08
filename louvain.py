@@ -11,9 +11,9 @@ Q - обозначенине модулярности графа. Лежит в 
 """
 
 g = Graph()
-g.load_graph('components\members.txt')
+g.load_graph('component\\members.txt')
 component_nodes = []
-component_file = open('components\component0.txt', 'r')
+component_file = open('component\\component0.txt', 'r')
 for line in component_file:
 	line.strip()
 	component_nodes.append(Node.id_to_node(line))
@@ -70,17 +70,11 @@ def louvain(g, groups):
 		node.cnt_degree()
 	reset_groups()
 	new_friends_format(g.nodes)
-	cnt = 0
 	while True:
 		mozhem = True
 		while mozhem:
-			cnt+=1
-			print(cnt)
 			mozhem = False
-			sub_cnt = 0
 			for node in g.nodes:
-				print(sub_cnt)
-				sub_cnt += 1
 
 				friends_groups = [friend.current_group for friend in node.friends]
 				max_dQ = -10 #случайное маленькое число
@@ -98,7 +92,7 @@ def louvain(g, groups):
 					move_to(node, max_group)
 					mozhem = True
 
-		outp = open('final.txt', 'w')
+		outp = open('component\\final.txt', 'w')
 		print("Groups:", len(groups), "; their sizes:")
 		for group in groups:
 			print(len(group))

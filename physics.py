@@ -19,9 +19,9 @@ SCREEN_WIDTH = 1800
 SCREEN_HEIGHT = 900
 
 g = Graph()
-g.load_graph('components\members.txt')
+g.load_graph('component\\members.txt')
 component_nodes = [] # маска по компоненте связности
-component_file = open('components\component5.txt', 'r')
+component_file = open('component\\component5.txt', 'r')
 for line in component_file:
 	line.strip()
 	component_nodes.append(Node.id_to_node(line))

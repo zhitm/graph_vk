@@ -13,12 +13,11 @@ for k in range(len(ids)):
     user_id = ids[k]
     url = f'https://api.vk.com/method/users.get?v=5.107&user_id={user_id}&access_token={token}'
     data = json.loads(urlopen(url).read())
-    
-	try:
-		file2.write(str(user_id) + data['response'][0]['first_name'] + data['response'][0]['last_name'] + '\n')
+    try:
+        file2.write(str(user_id) + data['response'][0]['first_name'] + data['response'][0]['last_name'] + '\n')
 	
-	except:
-		file2.write(str(user_id) + "polish asshole" + '\n')
+    except:
+        file2.write(str(user_id) + "polish asshole" + '\n')
 
 file1.close()
 file2.close()
