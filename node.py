@@ -5,6 +5,7 @@ class Node:
 	cnt = 0
 	def __init__(self, id):
 		self.id = id
+		self.degree = 0
 		self.friends = set()
 		self.used = False #переменная для обходов, сразу после обхода превращается обратно в False
 		self.number = Node.cnt
@@ -25,6 +26,9 @@ class Node:
 
 	def dict_upd(self):
 		Node.id_node_dict.update({self.id: self})
+
+	def cnt_degree(self):
+		self.degree = len(self.friends)
 
 	@staticmethod
 	def id_to_node(node_id):
