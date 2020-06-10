@@ -9,6 +9,7 @@ from itertools import combinations
 Лувенский алгоритм "жадно" увеличивает модулярность, пытаясь переместить вершину в сообщество своих соседей.
 Q - обозначенине модулярности графа. Лежит в промежутке от -1/2 до 1
 """
+GROUP_SIZE_RESTRICTION = 19
 
 g = Graph()
 g.load_graph('component\\members.txt')
@@ -50,7 +51,7 @@ def group_Q(group):
 
 
 def find_dQ(node, group):
-	if node in group:
+	if node in group or len(group) > GROUP_SIZE_RESTRICTION: #
 		return 0
 	dQ = 0
 	for same_group_node in node.current_group:
